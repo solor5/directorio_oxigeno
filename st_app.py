@@ -9,10 +9,10 @@ st.write('Esta es una iniciativa sin fines de lucro que busca crear un directori
 st.write('Creado por [William Solórzano](https://www.linkedin.com/in/william-solórzano/)')
 st.header('Piura')
 
-file = st.file_uploader("Choose an excel file", type="xlsx")
+file = st.file_uploader("Choose an excel file", type="csv")
 
 if st.button('go!'):
-        df = pd.read_excel(file)
+        df = pd.read_csv(file)
 
 #df_nan = pd.read_excel('https://github.com/solor5/directorio_oxigeno/raw/a58a41722d2ed4494db1871b4f6f777fadae7f92/Excel.xlsx')
 #st.table(df_nan[['Empresa','Teléfonos']])
