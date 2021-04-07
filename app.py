@@ -9,7 +9,7 @@ st.write('Esta es una iniciativa sin fines de lucro que busca crear un directori
 st.write('Creado por [William Solórzano](https://www.linkedin.com/in/william-solórzano/)')
 st.header('Piura')
 
-df_nan = pd.read_excel('https://github.com/solor5/directorio_oxigeno/raw/a58a41722d2ed4494db1871b4f6f777fadae7f92/Excel.xlsx')
+df_nan = pd.read_csv('https://raw.githubusercontent.com/solor5/directorio_oxigeno/main/data.csv')
 st.table(df_nan[['Empresa','Teléfonos']])
 
 df = df_nan.dropna(axis = 0).reset_index(drop = True)
