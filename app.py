@@ -25,6 +25,6 @@ for i in range(0,df.shape[0],1):
   ).add_to(m)
   count += 1
 
-st.write('Mapa con los puntos de venta')
+st.write('*Mapa con los puntos de venta*')
 # call to render Folium map in Streamlit
 folium_static(m)
