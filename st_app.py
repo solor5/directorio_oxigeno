@@ -13,6 +13,7 @@ file = st.file_uploader("Choose an excel file", type="csv")
 
 if st.button('go!'):
         df = pd.read_csv(file)
+        st.write(df)
 
 #df_nan = pd.read_excel('https://github.com/solor5/directorio_oxigeno/raw/a58a41722d2ed4494db1871b4f6f777fadae7f92/Excel.xlsx')
 #st.table(df_nan[['Empresa','Teléfonos']])
