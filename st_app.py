@@ -19,21 +19,21 @@ if st.button('go!'):
     for i in range(len(sheets)):
         df = pd.read_excel(file, sheet_name = sheets[i])
 
-df_nan = pd.read_excel('https://github.com/solor5/directorio_oxigeno/raw/a58a41722d2ed4494db1871b4f6f777fadae7f92/Excel.xlsx')
-st.table(df_nan[['Empresa','Teléfonos']])
+#df_nan = pd.read_excel('https://github.com/solor5/directorio_oxigeno/raw/a58a41722d2ed4494db1871b4f6f777fadae7f92/Excel.xlsx')
+#st.table(df_nan[['Empresa','Teléfonos']])
 
-df = df_nan.dropna(axis = 0).reset_index(drop = True)
+#df = df_nan.dropna(axis = 0).reset_index(drop = True)
 
 # center on Piura
-m = folium.Map(location=[-5.19449, -80.63282], zoom_start=12)
+#m = folium.Map(location=[-5.19449, -80.63282], zoom_start=12)
 
 # add marker for Piura
-count = 0 
-for i in range(0,df.shape[0],1):
-  folium.Marker(
-      [df['Latitud'][count], df['Longitud'][count]], popup=df['Empresa'][count], tooltip=df['Empresa'][count]
-  ).add_to(m)
-  count += 1
+#count = 0 
+#for i in range(0,df.shape[0],1):
+#  folium.Marker(
+#      [df['Latitud'][count], df['Longitud'][count]], popup=df['Empresa'][count], tooltip=df['Empresa'][count]
+#  ).add_to(m)
+#  count += 1
 
 # call to render Folium map in Streamlit
-folium_static(m)
+#folium_static(m)
