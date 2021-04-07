@@ -12,12 +12,7 @@ st.header('Piura')
 file = st.file_uploader("Choose an excel file", type="xlsx")
 
 if st.button('go!'):
-        
-    all_sheet = pd.ExcelFile(file)   
-    sheets = all_sheet.sheet_names
-
-    for i in range(len(sheets)):
-        df = pd.read_excel(file, sheet_name = sheets[i])
+        df = pd.read_excel(file)
 
 #df_nan = pd.read_excel('https://github.com/solor5/directorio_oxigeno/raw/a58a41722d2ed4494db1871b4f6f777fadae7f92/Excel.xlsx')
 #st.table(df_nan[['Empresa','Teléfonos']])
