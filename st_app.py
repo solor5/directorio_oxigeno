@@ -29,3 +29,6 @@ for i in range(0,df.shape[0],1):
 st.subheader('**Mapa con los puntos de venta**')
 # call to render Folium map in Streamlit
 folium_static(m)
+
+st.header('**Formulario**')
+nombre = st.text_input("Nombre de la empresa o contacto", default_value_goes_here)
