@@ -30,7 +30,9 @@ st.subheader('**Mapa con los puntos de venta**')
 # call to render Folium map in Streamlit
 folium_static(m)
 
-opciones = ['Amazonas', 'Ancash', 'Apurimac']
+opciones = ['Amazonas', 'Ancash', 'Apurimac', 'Arequipa', 'Ayacucho', 'Cajamarca', 'Cusco', 'Huancavelica',
+           'Huánuco', 'Ica', 'Junín', 'La Libertad', 'Lambayeque', 'Lima', 'Loreto', 'Madre de Dios', 'Moquegua', 
+           'Pasco', 'Piura', 'Puno', 'San Martín', 'Tacna', 'Tumbes', 'Ucayali']
 st.header('**Formulario**')
 nombre = st.text_input('Nombre de la empresa o contacto')
 departamento = st.selectbox('Departamento', opciones)
