@@ -46,3 +46,12 @@ precio = st.number_input('Llene este apartado si posee información del precio d
 list = [nombre, telefono1, telefono2, departamento, ciudad, direccion, precio]
 st.write(list)
 
+def return_unhashable_object():
+    return os.environ # This object is not hashable in Python 3
+
+@st.cache
+def this_will_fail_with_a_useless_trace():
+    return return_unhashable_object()
+
+this_will_fail_with_a_useless_trace()
+
