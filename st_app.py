@@ -3,7 +3,7 @@ from streamlit_folium import folium_static
 import folium
 import pandas as pd
 import warnings
-warnings.filterwarnings(‘ignore’)
+warnings.filterwarnings('ignore')
 
 st.image('https://github.com/solor5/directorio_oxigeno/raw/main/img_ox.png', use_column_width=True)
 st.title('Directorio de puntos de venta de oxígeno medicinal ')
