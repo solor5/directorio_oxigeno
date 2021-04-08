@@ -2,8 +2,6 @@ import streamlit as st
 from streamlit_folium import folium_static
 import folium
 import pandas as pd
-import warnings
-warnings.filterwarnings('ignore')
 
 st.image('https://github.com/solor5/directorio_oxigeno/raw/main/img_ox.png', use_column_width=True)
 st.title('Directorio de puntos de venta de oxígeno medicinal ')
@@ -38,12 +36,14 @@ opciones = ['Amazonas', 'Ancash', 'Apurimac', 'Arequipa', 'Ayacucho', 'Cajamarca
 
 st.header('**Formulario**')
 nombre = st.text_input('Nombre de la empresa o contacto')
-telefono1 = st.number_input('Teléfono 1', format="%i")
+telefono1 = st.number_input('Teléfono 1', format="%.0f")
 telefono2 = st.number_input('Teléfono 2', format="%.0f")
 departamento = st.selectbox('Departamento', opciones)
 ciudad = st.text_input('Nombre del distrito o ciudad')
 direccion = st.text_input('Dirección de la empresa, puede adjuntar el enlace de Google Maps')
-precio = st.number_input('Llene este apartado si posee información del precio del óxigeno', format="%.2f",)
+precio = st.number_input('Llene este apartado si posee información del precio del óxigeno', format="%.2f")
 
-list = [nombre, telefono1, telefono2, departamento, ciudad, direccion, precio]
-st.write(list)
+if st.button('Enviar'):
+  st.write('Gracias por compartir :)')
+  list = [nombre, telefono1, telefono2, departamento, ciudad, direccion, precio]
+  st.write(list)
