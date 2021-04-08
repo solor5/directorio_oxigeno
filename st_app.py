@@ -31,5 +31,5 @@ st.subheader('**Mapa con los puntos de venta**')
 folium_static(m)
 
 st.header('**Formulario**')
-st.text_area("Nombre de la empresa o contacto", default_value_goes_here)
-nombre = st.text_input('Movie title')
+title = st.text_input('Movie title')
+st.write(title)
