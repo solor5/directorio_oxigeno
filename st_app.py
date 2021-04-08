@@ -2,6 +2,8 @@ import streamlit as st
 from streamlit_folium import folium_static
 import folium
 import pandas as pd
+import warnings
+warnings.filterwarnings(‘ignore’)
 
 st.image('https://github.com/solor5/directorio_oxigeno/raw/main/img_ox.png', use_column_width=True)
 st.title('Directorio de puntos de venta de oxígeno medicinal ')
@@ -45,14 +47,3 @@ precio = st.number_input('Llene este apartado si posee información del precio d
 
 list = [nombre, telefono1, telefono2, departamento, ciudad, direccion, precio]
 st.write(list)
-
-import os
-def return_unhashable_object():
-    return os.environ # This object is not hashable in Python 3
-
-@st.cache
-def this_will_fail_with_a_useless_trace():
-    return return_unhashable_object()
-
-this_will_fail_with_a_useless_trace()
-
