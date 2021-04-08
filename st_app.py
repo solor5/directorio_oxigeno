@@ -39,7 +39,7 @@ opciones = ['Amazonas', 'Ancash', 'Apurimac', 'Arequipa', 'Ayacucho', 'Cajamarca
 st.header('**Formulario**')
 nombre = st.text_input('Nombre de la empresa o contacto')
 telefono1 = st.number_input('Teléfono 1', format="%i")
-telefono2 = st.number_input('Teléfono 2', format="%i")
+telefono2 = st.number_input('Teléfono 2', format="%.0f")
 departamento = st.selectbox('Departamento', opciones)
 ciudad = st.text_input('Nombre del distrito o ciudad')
 direccion = st.text_input('Dirección de la empresa, puede adjuntar el enlace de Google Maps')
