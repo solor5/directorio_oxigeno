@@ -41,7 +41,7 @@ telefono2 = st.number_input('Teléfono 2', format="%i")
 departamento = st.selectbox('Departamento', opciones)
 ciudad = st.text_input('Nombre del distrito o ciudad')
 direccion = st.text_input('Dirección de la empresa, puede adjuntar el enlace de Google Maps')
-precio = st.number_input('Llene este apartado si posee información del precio del óxigeno', format="{:,.2f}",)
+precio = st.number_input('Llene este apartado si posee información del precio del óxigeno', format="%2f",)
 
 list = [nombre, telefono1, telefono2, departamento, ciudad, direccion, precio]
 st.write(list)
