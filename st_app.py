@@ -36,12 +36,12 @@ opciones = ['Amazonas', 'Ancash', 'Apurimac', 'Arequipa', 'Ayacucho', 'Cajamarca
 
 st.header('**Formulario**')
 nombre = st.text_input('Nombre de la empresa o contacto')
-telefono1 = st.number_input('Teléfono 1')
-telefono2 = st.number_input('Teléfono 2')
+telefono1 = st.number_input('Teléfono 1', format="{:,.0f}")
+telefono2 = st.number_input('Teléfono 2', format="{:,.0f}")
 departamento = st.selectbox('Departamento', opciones)
 ciudad = st.text_input('Nombre del distrito o ciudad')
 direccion = st.text_input('Dirección de la empresa, puede adjuntar el enlace de Google Maps')
-precio = st.number_input('Llene este apartado si posee información del precio del óxigeno')
+precio = st.number_input('Llene este apartado si posee información del precio del óxigeno', format="{:,.2f}",)
 
 list = [nombre, telefono1, telefono2, departamento, ciudad, direccion, precio]
 st.write(list)
