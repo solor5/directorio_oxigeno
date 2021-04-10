@@ -4,23 +4,29 @@ import pandas as pd
 
 from  streamlit_folium import folium_static
 from views.components.hero import hero
+from controller.company import get_data_for_table
+from controller.company import get_data_for_map
 from conection import MySQL
 
 connection = MySQL(st)
 data = connection.get_all_data()
-st.write(data['state'])
 
+#Hero
 hero(st)
 
-df_nan = pd.read_csv('https://raw.githubusercontent.com/solor5/directorio_oxigeno/main/data.csv')
-st.table(df_nan[['Empresa','Teléfonos']])
+df_nan = data['response']
+# Table
+df_data_pd = pd.DataFrame(get_data_for_table(df_nan),columns=(['Empresa','Telefono1','Telefono2','Ciudad']))
+st.table(df_data_pd)
 
-df = df_nan.dropna(axis = 0).reset_index(drop = True)
+# Map
+df_data_pd_map = pd.DataFrame(get_data_for_map(df_nan),columns=(['Empresa','Latitud','Longitud']))
+df = df_data_pd_map.dropna(axis = 0).reset_index(drop = True)
 
-# center on Piura
+## center on Piura
 m = folium.Map(location=[-5.19449, -80.63282], zoom_start=12)
 
-# add marker for Piura
+## add marker for Piura
 count = 0
 for i in range(0,df.shape[0],1):
   folium.Marker(

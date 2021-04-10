@@ -15,8 +15,6 @@ class MySQL(object):
         try:
             self.cnx = mysql.connector.connect(**config)
             self.cursor = self.cnx.cursor()
-            self.st.text("Connecction success")
-            st.text("Connecction success")
         except mysql.connector.Error as err:
             if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
                 self.st.text("Something is wrong with your user name or password")
@@ -27,12 +25,12 @@ class MySQL(object):
 
     def get_all_data(self) :
         try :
-            self.cursor.execute("SELECT * FROM  company INNER JOIN citys ON citys.idCitys = company.citys_id")
+            self.cursor.execute("SELECT company.name, celphone1, celphone2, citys.name, latitude, longitude FROM  company INNER JOIN citys ON citys.idCitys = company.citys_id")
         except mysql.connector.Error as err:
             return False, str(err.errno) + " : " + sql
 
         result = self.cursor.fetchall()
-        if not result :
-            return {"state": False, "response": "Record not found"}
-        else :
+        if result :
             return {"state": True, "response": result}
+        else :
+            return {"state": False, "response": "Record not found"}
