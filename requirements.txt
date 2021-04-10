@@ -2,3 +2,4 @@ streamlit==0.77.0
 pandas==1.2.3
 folium==0.12.1
 streamlit-folium==0.3.0
+mysql-connector-python==8.0.23
