@@ -50,6 +50,6 @@ address = st.text_input('Dirección de la empresa, puede adjuntar el enlace de G
 price = st.number_input('Llene este apartado si posee información del precio del óxigeno', format="%.2f")
 
 if st.button('Enviar'):
-  response = controller.add_data(company_name, celphone1, celphone2, address, price,citys_id[city] )
+  response = controller.add_company(company_name, celphone1, celphone2, address, price,citys_id[city] )
   if response :
       st.success("Gracias por compartir :). Se guardo la data exitosamente")
