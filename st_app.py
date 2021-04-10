@@ -12,7 +12,7 @@ hero(st)
 
 
 # Table
-df_data_pd = pd.DataFrame(controller.get_data_for_table(),columns=(['Empresa','Telefono1','Telefono2','Ciudad','Precio']))
+df_data_pd = pd.DataFrame(controller.get_data_for_table(),columns=(['Empresa','Telefono1','Telefono2','Departamento','Precio']))
 st.table(df_data_pd)
 
 # Map
