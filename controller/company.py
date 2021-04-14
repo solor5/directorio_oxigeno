@@ -15,18 +15,18 @@ class ControllerCompany(object):
         def get_data_for_table(self):
                 data_necesari = []
                 for fila in self.df_nan:
-                        data_necesari.append([fila[0],fila[1],fila[2],fila[3],fila[4]])
+                        data_necesari.append([fila[0],fila[1],fila[2],fila[3],fila[4],fila[5]])
                 return data_necesari
 
         def get_data_for_map(self):
                 data_necesari = []
                 for fila in self.df_nan:
-                        data_necesari.append([fila[0],fila[5],fila[6]])
+                        data_necesari.append([fila[0],fila[6],fila[7]])
                 return data_necesari
 
-        def add_company(self,company_name, celphone1, celphone2, address, price,city_id):
+        def add_company(self,company_name, celphone1, celphone2, address, price,aparment_id, city):
                 try:
-                        self.connection.add_data(company_name, celphone1, celphone2, address, price,city_id)
+                        self.connection.add_data(company_name, celphone1, celphone2, address, price,aparment_id, city)
                 except:
                         st.error('Error al guardar data, Intente nuevamente')
                         return False
