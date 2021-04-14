@@ -8,7 +8,7 @@ from controller.company import ControllerCompany
 
 controller = ControllerCompany()
 #Hero
-hero(st)
+hero()
 
 
 # Table
